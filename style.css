@@ -1,0 +1,138 @@
+/* 全体の背景（おしゃれグラデーション＋ぼかし） */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Hiragino Sans", "Noto Sans JP", sans-serif;
+  color: #f9fafb;
+  min-height: 100vh;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+
+  /* 自然っぽい色のグラデーション背景 */
+  background: radial-gradient(circle at 10% 20%, #8fd3f4 0, transparent 40%),
+    radial-gradient(circle at 90% 80%, #a1ffce 0, transparent 45%),
+    linear-gradient(135deg, #1e293b 0%, #020617 60%, #022c22 100%);
+}
+
+/* うっすら暗くして読みやすくするオーバーレイ */
+.overlay {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px 16px 32px;
+  box-sizing: border-box;
+}
+
+/* ヘッダー */
+.site-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.logo {
+  font-size: clamp(40px, 6vw, 56px);
+  letter-spacing: 0.18em;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.tagline {
+  margin: 8px 0 0;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* メインカード（ガラスっぽい見た目） */
+.main-content {
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  background: rgba(15, 23, 42, 0.78);
+  border-radius: 24px;
+  padding: 24px 20px 28px;
+  max-width: 480px;
+  width: 100%;
+  box-sizing: border-box;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  text-align: center;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+}
+
+.card h2 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 22px;
+}
+
+.message {
+  margin: 0 0 20px;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* ボタン（大きくて押しやすく） */
+.button {
+  display: inline-block;
+  padding: 14px 32px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.05em;
+
+  background: linear-gradient(135deg, #22c55e, #2dd4bf);
+  color: #022c22;
+  box-shadow: 0 12px 24px rgba(34, 197, 94, 0.35);
+  transition: transform 0.15s ease, box-shadow 0.15s ease,
+    filter 0.15s ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 32px rgba(34, 197, 94, 0.45);
+  filter: brightness(1.05);
+}
+
+.button:active {
+  transform: translateY(0);
+  box-shadow: 0 8px 16px rgba(34, 197, 94, 0.35);
+}
+
+/* 補足テキスト */
+.note {
+  margin-top: 16px;
+  font-size: 12px;
+  line-height: 1.6;
+  color: #e5e7eb;
+  opacity: 0.8;
+}
+
+/* フッター */
+.footer {
+  margin-top: 24px;
+  text-align: center;
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+/* スマホ用ちょっと余白調整 */
+@media (max-width: 600px) {
+  .card {
+    padding: 20px 16px 24px;
+  }
+
+  .message {
+    font-size: 14px;
+  }
+
+  .button {
+    width: 100%;
+    padding: 14px 0;
+  }
+}
